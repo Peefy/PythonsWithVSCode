@@ -1,11 +1,14 @@
 #!/usr/bin/python3
+#python -m pip install -U pip
 from sys import path
+import sys
 import math
 import keyword
 import random
+import matplotlib
+import scrapy
 
 #python利用缩进编程，句尾没有分号
-
 print("hello word")
 print(1.2 * 2.3)
 
