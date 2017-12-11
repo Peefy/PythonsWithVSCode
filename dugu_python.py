@@ -249,11 +249,6 @@ for i, o in enumerate(dugustrs):
     print(i, o)
 
 ## py3迭代器与生成器
-## py3函数
-def hello():
-    print("hello world")
-
-hello()
 
 
         

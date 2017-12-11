@@ -1,2 +1,2 @@
-
+import numpy as nm
  
