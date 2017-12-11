@@ -1,12 +1,13 @@
 #!/usr/bin/python3
 #python -m pip install -U pip
+#python3 dugu_python.py
 from sys import path
 import sys
 import math
 import keyword
 import random
 import matplotlib
-import scrapy
+#import scrapy
 
 #python利用缩进编程，句尾没有分号
 print("hello word")
@@ -248,6 +249,11 @@ for i, o in enumerate(dugustrs):
     print(i, o)
 
 ## py3迭代器与生成器
+## py3函数
+def hello():
+    print("hello world")
+
+hello()
 
 
         
