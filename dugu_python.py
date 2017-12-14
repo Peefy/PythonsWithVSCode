@@ -4,6 +4,9 @@
 # python dugu_python.py
 from sys import path
 import sys
+import os
+import re
+import os.path as opath
 import math
 import keyword
 import random
@@ -14,6 +17,7 @@ from collections import deque
 import dugu_lib as dugu
 import pickle
 import pprint as ppr
+from datetime import date
 
 #python利用缩进编程，句尾没有分号
 print("hello word")
@@ -338,10 +342,10 @@ def sum2( arg1, arg2 ):
     #返回2个参数的和."
     total = arg1 + arg2; # total在这里是局部变量.
     print ("函数内是局部变量 : ", total)
-    return total;
+    return total
 
 #调用sum函数
-total = sum2( 10, 20 );
+total = sum2( 10, 20 )
 print ("函数外是全局变量 : ", total)
 
 # global 和 nonlocal关键字可以改变作用域
@@ -456,7 +460,94 @@ with open('data.ini', 'wb') as wb:
 with open('data.ini', 'rb') as rb:
     data_read = pickle.load(rb)
     ppr.pprint(data_read)
-## pyhton3 OS
+## pyhton3 OS and os.path
+print(os.access('dugu_lib.py', 1))
+print(os.path.abspath('dugu_lib.py'))
 
-print('')
+## python3 错误和异常
+try:
+    print(10 * 1/0)
+    print('变量未定义')
+except (ZeroDivisionError, NameError) as err:
+    print('不能除以0的异常:', err)
+finally:
+    print('这是finally中的语句')
+try:
+    span = spam + 3
+except NameError:
+    # raise 语句将异常抛出
+    pass
+##python3 面向对象
+class DuGu:
+    #基本属性
+    number = 10000
+    #私有属性
+    __privateNumber = 1
+    #构造方法
+    def __init__(self, msg, num):
+        self.msg = msg
+        self.num = num
+    #私有方法
+    def __private_func(self):
+        pass
+    #运算符重载
+    def __add__(self, other):      
+        return DuGu(self.msg, self.num + other.num)
+    #相当于重载toString()函数
+    def __str__(self):
+        return str((self.msg, self.num)) #元组
+    def f(self):
+        print('hello class function')
+
+    def printSelf(self):
+        self.__private_func()
+        print(self.__class__)
+    #类的类方法
+    @classmethod
+    def clasm(*args):
+        return 'clas m'
+    #类的静态方法
+    @staticmethod
+    def stam():
+        """This is a static method
+        >>> DuGu.stam() 
+        sta m
+        """
+        return 'sta m'
+
+class DuGuChild(DuGu):
+    i = 100
+    j = (100, 100)
+    def func(self):
+        number = number + 1
+        print(number)
+
+dugu = DuGu('123',123)
+dugu.f()
+dugu.printSelf()
+print(dugu)
+print(DuGu.clasm())
+print(DuGu.stam())
+print(DuGu('', 1) + DuGu('',1))
+duguchild = DuGuChild('','')
+print(duguchild.j)
+
+## python3 标准库概览 
+# 操作系统接口
+print(os.getcwd())
+print(dir(os)) 
+#正则表达式
+# r'^[]{}[]{}[]{}$'
+result = re.findall(r'\bf[a-z]*|o[a-z]*|hn','whitch foot or hand fell fastest')
+str_test = 'tel:xpf6677@163.com'
+pattern = r'^tel:[a-zA-Z0-9]*@{1}[a-zA-Z0-9]*.{1}com$'
+print(re.findall(pattern,str_test))
+print(result)
+#日期和时间
+print(date.today())
+print(date.today().strftime("%m-%d-%y %b %Y"))
+
+##一些python3 实例
+
+print()
 
