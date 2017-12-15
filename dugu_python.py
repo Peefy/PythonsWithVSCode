@@ -11,13 +11,15 @@ import math
 import keyword
 import random
 import matplotlib
-import scrapy
 import numpy.random as nmr
 from collections import deque
 import dugu_lib as dugu
 import pickle
 import pprint as ppr
 from datetime import date
+import cmath
+import functools as func
+import calendar
 
 #python利用缩进编程，句尾没有分号
 print("hello word")
@@ -548,6 +550,25 @@ print(date.today())
 print(date.today().strftime("%m-%d-%y %b %Y"))
 
 ##一些python3 实例
+print('hello py3')
+print('-8的平方根:',(-8) ** 0.5)
+print(cmath.sin(45))
+print(random.randint(0,9))
+a = 1
+b = 2
+a, b = b, a
+c = 1234
+print(c ** b + 1 / b + a)
+print(max((a,b,c)))
+print(func.reduce(lambda x,y:x*y,range(1,8)))
+print('以下是99乘法表')
+for i in range(1,10):
+    for j in range(1,i + 1):
+        print('{}*{}={}\t'.format(i,j,i*j),end=' ')
+    print('')
+print('下面是一个日历')
+print(calendar.month(2017,3))
+## python3 正则表达式
 
 print()
 
