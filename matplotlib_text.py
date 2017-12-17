@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 #python3 matplotlib_text.py
 #python matplotlib_text.py
 
@@ -25,5 +26,11 @@ while abs(x1_pre - x1) + abs(x2_pre - x2) >= 0.5 * 0.0001:
     print(i)
     print(x1,x2)
     i += 1
+=======
+import numpy as np
+import matplotlib.pylab as mat
+import matplotlib.pyplot as pl
+import scrapy
+>>>>>>> 75f151a10d5f62d24d0d1444a33c290b1003db90
 
 
