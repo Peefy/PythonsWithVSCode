@@ -20,8 +20,9 @@ from datetime import date
 import cmath
 import functools as func
 import calendar
+import pymysql
 
-#python利用缩进编程，句尾没有分号
+# python利用缩进编程，句尾没有分号
 print("hello word")
 print(1.2 * 2.3)
 
@@ -569,6 +570,26 @@ for i in range(1,10):
 print('下面是一个日历')
 print(calendar.month(2017,3))
 ## python3 正则表达式
+print(re.match(r'www','www.dugu.com').span())
+print(re.match(r'com','www.dugu.com'))
+print(re.search(r'^w{4}\.s{3}\.com.{3}[0-9]*$', 'wwww.sss.comAAA123'))
+#match和search的区别：match只匹配字符串的开始。
+phone = '17801112000 this is a phone num'
+print(re.sub(r'[^0-9]*', '', phone))  #匹配非数字
+date_str = '2017-12-12'
+print(re.sub(r'([0-9]{4})-(\d{2})-(\d{2})',r'\2/\3/\1',date_str))
+## python3 CGI编程 关于web
+## python3 mysql
+# 没安装mysql，回头将联想刷成linux CentOS
+'''
+db = pymysql.connect("localhost","testuser","test123","TESTDB")
+cusor = db.cursor()
+cusor.execute("SELECT VERSION()")
+print(cusor.fetchone())
+'''
+#
 
+
+#python3 dugu_python.py
 print()
 
