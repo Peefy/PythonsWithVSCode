@@ -20,7 +20,7 @@ from datetime import date
 import cmath
 import functools as func
 import calendar
-import pymysql
+import socket
 
 # python利用缩进编程，句尾没有分号
 print("hello word")
@@ -587,8 +587,26 @@ cusor = db.cursor()
 cusor.execute("SELECT VERSION()")
 print(cusor.fetchone())
 '''
-#
+## pyhton3 网络编程
+s = socket.socket()
+host = socket.gethostname()
+addr = '127.0.0.1'
+port = 9999
+print(host)
+s.bind((addr, port))
+s.listen(5)
+client = socket.socket()
+client.bind((addr,12345))
+client.connect((addr, port))
+client1, (addr, port) = s.accept()
+print(addr,port)
+client1.send('hello'.encode())
+data = client.recv(1024)
+print(str(data)) 
+client.close()
+s.close()
 
+##python3 SMTP 发送邮件
 
 #python3 dugu_python.py
 print()
