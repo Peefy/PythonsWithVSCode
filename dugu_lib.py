@@ -13,6 +13,7 @@ list, set, and tuple.
 * UserString   wrapper around string objects for easier string subclassing
 
 '''
+
 def print_func( par ):
     print ("Hello : ", par)
     return

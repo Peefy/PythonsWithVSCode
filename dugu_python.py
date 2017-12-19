@@ -21,6 +21,18 @@ import cmath
 import functools as func
 import calendar
 import socket
+import smtplib
+from email.mime.text import MIMEText
+from email.header import Header
+import _thread as thread
+import time
+import threading
+from threading import Thread
+import queue
+import xml.dom.minidom
+from xml.dom.minidom import parse
+import json
+import tkinter as tk
 
 # python利用缩进编程，句尾没有分号
 print("hello word")
@@ -518,6 +530,7 @@ class DuGu:
         """
         return 'sta m'
 
+threadLock = threading.Lock()
 class DuGuChild(DuGu):
     i = 100
     j = (100, 100)
@@ -588,6 +601,7 @@ cusor.execute("SELECT VERSION()")
 print(cusor.fetchone())
 '''
 ## pyhton3 网络编程
+"""
 s = socket.socket()
 host = socket.gethostname()
 addr = '127.0.0.1'
@@ -596,7 +610,7 @@ print(host)
 s.bind((addr, port))
 s.listen(5)
 client = socket.socket()
-client.bind((addr,12345))
+client.bind((addr,11100))
 client.connect((addr, port))
 client1, (addr, port) = s.accept()
 print(addr,port)
@@ -605,8 +619,86 @@ data = client.recv(1024)
 print(str(data)) 
 client.close()
 s.close()
+"""
 
 ##python3 SMTP 发送邮件
+"""
+sender = 'from@runoob.com'
+receivers = ['366066205@qq.com']  # 接收邮件，可设置为你的QQ邮箱或者其他邮箱
+ 
+mail_msg = """
+#<p>Python 邮件发送测试...</p>
+#<p><a href="http://www.runoob.com">这是一个链接</a></p>
+"""
+message = MIMEText(mail_msg, 'html', 'utf-8')
+message['From'] = Header("菜鸟教程", 'utf-8')
+message['To'] =  Header("测试", 'utf-8')
+ 
+subject = 'Python SMTP 邮件测试'
+message['Subject'] = Header(subject, 'utf-8')
+
+try:
+    smtpObj = smtplib.SMTP('localhost')
+    smtpObj.sendmail(sender, receivers, message.as_string())
+    print ("邮件发送成功")
+except smtplib.SMTPException:
+    print ("Error: 无法发送邮件")
+"""
+
+## python3 多线程
+def __dugu_thread(*args):
+    for i in range(1,10):
+        print(time.time())
+
+__dugu_thread()
+thread.start_new(__dugu_thread,('thread1',1))
+print(threading.current_thread())
+class MyThread(Thread):
+    def __init__(self, count):
+        Thread.__init__(self)
+        self.count = count
+    def run(self):
+        for i in range(1,3):
+            print('thread', self.count)
+            time.sleep(1)
+
+t = MyThread(5)
+t.start()
+#t.join()  #join 相当于await
+
+## python3 XML解析
+trees = parse('xml_demo.xml')
+collction = trees.getElementsByTagName('clr')
+btns = collction.item(0).getElementsByTagName('button')
+for c in collction:
+    print(c)
+for btn in btns:
+    print(btn)
+
+## python3 json解析
+data = {
+    "name" : "dugu",
+    "age" : 21
+}
+print(json.dumps(data), repr(data))
+with open('config.json', 'r') as rf:
+    o = json.load(rf)
+    for i in o:
+        print(i, o[i])
+
+## python3 日期和时间
+print(time.time())
+print(time.clock())
+print(time.localtime(time.time()))
+print (time.strftime("%Y-%m-%d %H:%M:%S", time.localtime()))
+print(time.altzone)
+print(time.timezone)
+## python3 内置函数
+# dict str min map ...
+print(str(map(lambda x : x ** 2,[1, 2, 3, 4, 6])))
+## python3 GUI编程
+top = tk.Tk()
+top.mainloop()
 
 #python3 dugu_python.py
 print()
