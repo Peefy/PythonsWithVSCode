@@ -6,3 +6,8 @@ print(nm.sort(X))
 print([x ** 2 for x in X if x < 30 and x > 10]) 
 a = nm.array((1,2,3))
 print(a)
+
+
+print('')
+#python numpy_test.py
+#python3 numpy_test.py
