@@ -33,6 +33,7 @@ import xml.dom.minidom
 from xml.dom.minidom import parse
 import json
 import tkinter as tk
+import asyncio
 
 # python利用缩进编程，句尾没有分号
 print("hello word")
@@ -698,8 +699,25 @@ print(time.timezone)
 print(str(map(lambda x : x ** 2,[1, 2, 3, 4, 6])))
 ## python3 GUI编程
 top = tk.Tk()
-top.mainloop()
+#top.mainloop()
 
+async def funcname(parameter_list=''):
+    print('async hello world')
+    asyncio.sleep(10)
+    print('async haode')
+
+@asyncio.coroutine
+def hello():
+    print("async Hello world!")
+    # 异步调用asyncio.sleep(1):
+    r = yield from asyncio.sleep(1)
+    print("async Hello again!")
+
+loop = asyncio.get_event_loop()
+loop.run_until_complete(funcname())
+loop.run_until_complete(hello())
+
+#python dugu_python.py
 #python3 dugu_python.py
 print()
 

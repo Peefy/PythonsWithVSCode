@@ -3,7 +3,7 @@
 # python3 -m pip install scrapy
 # python -m pip install scrapy
 
-import scrapy
+import scrapy.spiders
 
 ## scrapy runspider scrapy_test.py -o blog.json
 

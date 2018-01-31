@@ -1,6 +1,6 @@
 
-#python3 matplotlib_text.py
-#python matplotlib_text.py
+#python3 matplotlib_test.py
+#python matplotlib_test.py
 
 import math
 import numpy as np
@@ -32,5 +32,5 @@ print(x1, x2)
 #无穷范数相当于求向量中元素绝对值的最大值
 print(np.linalg.norm([1, 2, 3, 4], ord=np.inf))
 
-#python matplotlib_text.py
-#python3 matplotlib_text.py
+#python matplotlib_test.py
+#python3 matplotlib_test.py

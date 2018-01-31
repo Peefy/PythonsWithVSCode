@@ -24,3 +24,6 @@ else:
    print('我来自另一模块')
 
 print('import mac_dugu_lib')
+print(hello other module)
+
+
