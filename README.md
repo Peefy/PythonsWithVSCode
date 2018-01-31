@@ -3,7 +3,7 @@ These are python files using visual studio code
 
 # Requirement:
 
-* *Python3.5+ Sdk*
+* *Python3.5+ Sdk* (Because of "async" and "await")
 * *pip package*
 * *numpy package*
 * *matplotlib package*
