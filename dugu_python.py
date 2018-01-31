@@ -556,6 +556,8 @@ print(os.getcwd())
 print(dir(os)) 
 #正则表达式
 # r'^[]{}[]{}[]{}$'
+# r'^(){}(){}(){}$'
+
 result = re.findall(r'\bf[a-z]*|o[a-z]*|hn','whitch foot or hand fell fastest')
 str_test = 'tel:xpf6677@163.com'
 pattern = r'^tel:[a-zA-Z0-9]*@{1}[a-zA-Z0-9]*.{1}com$'
