@@ -38,6 +38,10 @@ Then enjoy it.
 
 If you like it or it may help.Thanks for **Fork** and *Star*!
 
+# Screenshot
+
+<img src="https://github.com/Peefy/PythonsWithVSCode/blob/master/screenshots/pythonWithVSC.png"/>
+
 ## LICENSE
 
 ```
