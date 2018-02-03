@@ -1,5 +1,6 @@
 #!/usr/bin/python3
 # python -m pip install -U pip
+# python3 -m pip install -U pip
 # python3 dugu_python.py
 # python dugu_python.py
 from sys import path
