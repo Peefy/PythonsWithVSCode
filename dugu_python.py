@@ -721,6 +721,22 @@ loop = asyncio.get_event_loop()
 loop.run_until_complete(funcname())
 loop.run_until_complete(hello())
 
+## python3 注意事项
+# range函数和arange函数都是左闭右开区间
+print('range(0,4)的值为：', [i for i in range(0,4)])
+
+# & | ^ - 与并异差集合不能用于list
+try:
+    setA = {1, 2, 3 ,4}
+    setB = {3, 4, 5, 6, 7}
+    print('A和B集合的交集:', setA & setB)  
+    listA = [1, 2, 3, 4]
+    listB = [3, 4, 5, 6, 7]
+    print('A和B列表的交集:', listA & listB)   
+except Exception as err:
+    print(err)
+
+
 #python dugu_python.py
 #python3 dugu_python.py
 print()
