@@ -35,7 +35,7 @@ from xml.dom.minidom import parse
 import json
 import tkinter as tk
 import asyncio
-
+import copy
 
 # python利用缩进编程，句尾没有分号
 print("hello word")
@@ -736,6 +736,25 @@ try:
 except Exception as err:
     print(err)
 
+## python对象，引用，浅拷贝，深拷贝的关系
+#直接赋值，对于单独一个数字来说也是引用 全部还是引用
+origin = [1, 2, [3,4]]
+obj = origin
+obj[0] = 5
+obj[2][0] = 2
+print('origin,obj,equal', origin, obj, origin == obj)
+# 浅拷贝：仅对象拷贝，对象持有的引用还是引用
+origin1 = [1, 2, [3,4]]
+obj1 = copy.copy(origin1)
+obj1[0] = 5
+obj1[2][0] = 2
+print('origin,obj,equal', origin1, obj1, origin1 == obj1)
+# 深拷贝:对象以及对象持有的引用都拷贝
+origin2 = [1, 2, [3,4]]
+obj2 = copy.deepcopy(origin2)
+obj2[0] = 5
+obj2[2][0] = 2
+print('origin,obj,equal', origin2, obj2, origin2 == obj2)
 
 #python dugu_python.py
 #python3 dugu_python.py
