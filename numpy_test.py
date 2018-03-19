@@ -14,6 +14,7 @@ A = matrix(zeros((3, 3)))
 # matlab索引从1开始，python从0开始
 A[1, 1] = 3
 B = matrix(np.random.rand(3, 3))
+
 B[2, 2] = 5
 print(A)
 print(B)
@@ -25,7 +26,7 @@ print(A - B)
 print(A * B)
 # 矩阵点乘
 print(multiply(A, B))
-
-
+C = np.array([12,23,34])
+print(C)
 # python numpy_test.py
 # python3 numpy_test.py
