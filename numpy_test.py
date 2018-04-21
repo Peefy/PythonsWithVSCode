@@ -28,5 +28,9 @@ print(A * B)
 print(multiply(A, B))
 C = np.array([12,23,34])
 print(C)
+# !numpy的array具有与matlab向量同样的功能
+a = np.array([[1,2],[3,4]])
+b = np.array([[1,3],[5,6]])
+print(a * b)
 # python numpy_test.py
 # python3 numpy_test.py
