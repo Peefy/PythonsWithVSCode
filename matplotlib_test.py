@@ -35,10 +35,15 @@ print(x1, x2)
 #无穷范数相当于求向量中元素绝对值的最大值
 print(np.linalg.norm([1, 2, 3, 4], ord=np.inf))
 
-x = arange(1,100,0.5)
-y = sin(x)
+x = arange(-100, 100, 0.5)
+y = sin(x) + sin(2 * x)
 figure()
 plot(x, y)
+show()
+figure()
+plot(fft.fftfreq(x.shape[-1]), abs(fft.fft(y)))
+show()
+imshow(sin(outer(x, x)))
 show()
 # python matplotlib_test.py
 # python3 matplotlib_test.py
