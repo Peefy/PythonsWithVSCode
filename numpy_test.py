@@ -4,6 +4,32 @@ import numpy as np
 from numpy.random import rand
 from numpy import *
 
+def matrix_multiply(A, B):
+    '''
+    两个矩阵相乘
+    '''
+    rowA = shape(A)[0]
+    colunmA = shape(A)[1]
+    rowB = shape(B)[0]
+    colunmB = shape(B)[1]
+    C = ones([rowA, colunmB])
+    if colunmA != rowA:
+        raise Exception('incompatible dimensions')
+    else:
+        for i in range(rowA):
+            for j in range(colunmB):
+                C[i][j] = 0
+                for k in range(colunmA):
+                    C[i][j] = C[i][j] + A[i][k] * B[k][j]
+        return C
+
+A = array([[1, 2], [3, 4]])
+print(A * A)
+print(matrix_multiply(A, A))
+A = matrix(A)
+print(A * A)
+print(multiply(A, A))
+
 X = np.array([2,3,45,1,23])
 print(np.sort(X))
 print([x ** 2 for x in X if x < 30 and x > 10]) 
