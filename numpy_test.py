@@ -32,5 +32,15 @@ print(C)
 a = np.array([[1,2],[3,4]])
 b = np.array([[1,3],[5,6]])
 print(a * b)
+
+A = array([[1, 2], [3,4], [5, 6]])
+print(A)
+print(A * 2)
+print(sin(A))
+A = A[0:3, 1:2]
+m = matrix(A)
+print(m)
+print(m.T)
+
 # python numpy_test.py
 # python3 numpy_test.py
