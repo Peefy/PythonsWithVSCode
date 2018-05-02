@@ -4,6 +4,8 @@ import numpy as np
 from numpy.random import rand
 from numpy import *
 
+import seaborn
+
 def matrix_multiply(A, B):
     '''
     两个矩阵相乘
@@ -22,6 +24,8 @@ def matrix_multiply(A, B):
                 for k in range(colunmA):
                     C[i][j] = C[i][j] + A[i][k] * B[k][j]
         return C
+
+seaborn.set_style('whitegrid')
 
 A = array([[1, 2], [3, 4]])
 # 相当于matlab中的点乘
