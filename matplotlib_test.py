@@ -3,12 +3,15 @@
 #python matplotlib_test.py
 
 import math
-import numpy as np
+
 import matplotlib.pylab as mat
 import matplotlib.pyplot as plt
-from matplotlib.pyplot import * 
+import numpy as np
+import seaborn
+from matplotlib.pyplot import *
 from numpy import *
 
+seaborn.set_style('darkgrid')
 
 ## plot 画一个函数咯
 X = np.linspace(0,100,200)
