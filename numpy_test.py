@@ -24,8 +24,12 @@ def matrix_multiply(A, B):
         return C
 
 A = array([[1, 2], [3, 4]])
+# 相当于matlab中的点乘
 print(A * A)
+# 相当于matlab中的矩阵乘
 print(matrix_multiply(A, A))
+# 相当于matlab中的矩阵乘
+print(dot(A, A))
 A = matrix(A)
 print(A * A)
 print(multiply(A, A))
