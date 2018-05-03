@@ -16,5 +16,7 @@ plot(x, y)
 print(n)
 show()
 
+print('add code runner')
+
 # python main.py
 # python3 main.py

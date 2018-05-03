@@ -1,8 +1,11 @@
-#!/usr/bin/python3
+
 # python -m pip install -U pip
 # python3 -m pip install -U pip
 # python3 dugu_python.py
 # python dugu_python.py
+
+from __future__ import print_function, division, absolute_import
+
 from sys import path
 import sys
 import os
