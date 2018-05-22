@@ -16,6 +16,9 @@ plot(x, y)
 print(n)
 show()
 
+# rand number 2 * 2 * 2
+print(random.rand(2, 2, 2))
+
 print('add code runner')
 
 # python main.py
