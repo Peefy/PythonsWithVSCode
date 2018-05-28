@@ -168,6 +168,14 @@ listDu = ['abcd', 786, 2.23, 'runoob', 70.2]
 print(listDu[1:3])       # 从第二个开始输出到第三个元素
 print(listDu[2:3])
 
+str = 'abcdef'
+print(str[::-1])
+print(str[::5])
+print(str[:])
+print(str[0:6:2])
+print(str[:5])
+print(str[-3:])
+
 flag = True
 if flag:
     print('ssss')
