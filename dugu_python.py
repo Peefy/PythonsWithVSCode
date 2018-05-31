@@ -189,7 +189,7 @@ if test < 2 and test >= 0:
     print(test)
 tests = (2, 3, 4)
 if test in tests:
-    print(str(test) + 'is in tests')
+    print(test, 'is in tests')
 
 # Fibonacci series: 斐波纳契数列
 # 两个元素的总和确定了下一个数
@@ -401,12 +401,12 @@ print(queue_me)
 Y = [12, 23, 45]
 print([[y, y ** 2] for y in Y]) 
 wepon = [' sd   ', 'sss   ', '  assa']
-print([[w, str(w).strip()] for w in wepon])
+# rint([[w, str(w).strip()] for w in wepon])
 VET1 = [1, 2, 3]
 VET2 = [4, 5, 6, 7]
-print([[v1, v2] for v1 in VET1 for v2 in VET2])
+# print([[v1, v2] for v1 in VET1 for v2 in VET2])
 
-#通过嵌套列表构成矩阵Matrix
+# 通过嵌套列表构成矩阵Matrix
 M = [[1, 2, 3],
      [4, 5, 6],
      [7, 8, 9]]
@@ -424,7 +424,7 @@ U = 12,T
 print(U)
 a = {x for x in 'abracadabra' if x not in 'abc'}
 print(a)
-dic_me = {str(x): x**2 for x in (2, 4, 6)} # 推导式创建字典
+dic_me = {x: x**2 for x in (2, 4, 6)} # 推导式创建字典
 print(dic_me)
 for k, v in dic_me.items():
     print(k, v)
@@ -452,7 +452,7 @@ dugu.print_func('dugu')
 ## python3 输入和输出
 S = 'hello dugu\n'
 print(repr(S))
-print(str(S))
+print(S)
 for i in range(1,11):
     print(repr(i).rjust(2), repr(i * i).rjust(3), end=' ')
     print(repr(i * i * i).rjust(4))
@@ -483,7 +483,7 @@ with open('file_test.txt', 'w') as f:
     f.write('1233333')
 #pickle模块实现了对象的序列化和反序列化
 data = {'key' : 123, 'value' : 'sdd'}
-print(str(data))
+print(data)
 with open('data.ini', 'wb') as wb:
     pickle.dump(data, wb)
 with open('data.ini', 'rb') as rb:
@@ -524,7 +524,7 @@ class DuGu:
         return DuGu(self.msg, self.num + other.num)
     #相当于重载toString()函数
     def __str__(self):
-        return str((self.msg, self.num)) #元组
+        return (self.msg, self.num) #元组
     def f(self):
         print('hello class function')
 
@@ -555,10 +555,8 @@ class DuGuChild(DuGu):
 dugu = DuGu('123',123)
 dugu.f()
 dugu.printSelf()
-print(dugu)
 print(DuGu.clasm())
 print(DuGu.stam())
-print(DuGu('', 1) + DuGu('',1))
 duguchild = DuGuChild('','')
 print(duguchild.j)
 
@@ -711,7 +709,7 @@ print(time.altzone)
 print(time.timezone)
 ## python3 内置函数
 # dict str min map ...
-print(str(map(lambda x : x ** 2,[1, 2, 3, 4, 6])))
+print(map(lambda x : x ** 2,[1, 2, 3, 4, 6]))
 ## python3 GUI编程
 top = tk.Tk()
 #top.mainloop()
