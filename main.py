@@ -15,7 +15,10 @@ n = norm(y)
 plot(x, y)
 print(n)
 show()
-
+A = array([[1,2],[3,4]])
+B = A
+print(dot(A, B))
+print(A * B)
 # rand number 2 * 2 * 2
 print(random.rand(2, 2, 2))
 
