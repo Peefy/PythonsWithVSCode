@@ -765,6 +765,44 @@ obj2[0] = 5
 obj2[2][0] = 2
 print('origin,obj,equal', origin2, obj2, origin2 == obj2)
 
+## 装饰器
+def makebold(fn):
+    def wrapped():
+        return "<b>" + fn() + "</b>"
+    return wrapped
+
+def makeitalic(fn):
+    def wrapped():
+        return "<i>" + fn() + "</i>"
+    return wrapped
+
+@makebold
+@makeitalic
+def decorators_hello():
+    return "hello world"
+
+print(decorators_hello()) 
+
+## python自省
+a = [1,2,3]
+b = {'a':1,'b':2,'c':3}
+c = True
+print(type(a),type(b),type(c)) # <type 'list'> <type 'dict'> <type 'bool'>
+
+## 列表迭代器和元组迭代器的区别 元组迭代器是一个生成器类
+L = [x*x for x in range(10)]
+print(L)
+[0, 1, 4, 9, 16, 25, 36, 49, 64, 81]
+g = (x*x for x in range(10))
+print(g)
+
+## python函数式编程
+a = [1,2,3,4,5,6,7]
+print(filter(lambda x: x > 5, a))
+
+a = map(lambda x:x*2,[1,2,3])
+print(a)
+
 #python dugu_python.py
 #python3 dugu_python.py
 print()
