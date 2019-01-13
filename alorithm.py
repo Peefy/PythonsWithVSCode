@@ -28,6 +28,16 @@ class Solution:
             i += 1
         return count
 
+def insertsort(A):
+    for j in range(1, len(A)):
+        key = A[j]
+        i = j - 1
+        while i >= 0 and A[i] > key:
+            A[i + 1] = A[i]
+            i -= 1
+        A[i + 1] = key
+    return A
+
 def main():
     solution = Solution()
     print(solution.solve([-6, -5, -2, 0, -1], 2, 1))
@@ -38,5 +48,6 @@ def main():
     print(solution.solve2(12, [2, 2, 5], [0, 2, 3, 8, 12]))
     print(solution.solve2(12, [2, 2, 3], [0, 2, 3, 8, 14]))
     print(solution.solve2(12, [3], [0, 2, 3, 8, 14]))
+    print(insertsort([5, 6, 4, 8, 4, 3, 2, 1]))
 if __name__ == "__main__":
     main()
