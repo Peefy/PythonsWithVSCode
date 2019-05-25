@@ -638,4 +638,94 @@ What is the difference between range and xrange functions in Python 2.X?
 http://stackoverflow.com/questions/94935/what-is-the-difference-between-range-and-xrange-functions-in-python-2-x
 
 
+## 31 Python3+新特性
+
+* 格式化字符串
+
+```python
+user = "Jane Doe"
+action = "buy"
+log_message = f'User {user} has logged in and did an action {action}.'
+print(log_message)# User Jane Doe has logged in and did an action buy.
+```
+
+* 路径管理库 Pathlib（最低 Python 版本为 3.4）
+
+```python
+from pathlib import Path
+root = Path('post_sub_folder')
+print(root)
+# post_sub_folderpath = root / 'happy_user'
+# Make the path absoluteprint(path.resolve())
+# /home/weenkus/Workspace/Projects/DataWhatNow-Codes/how_your_python3_should_look_like/post_sub_folder/happy_user
+```
+
+* 类型提示 Type hinting（最低 Python 版本为 3.5）
+
+```python
+def sentence_has_animal(sentence: str) -> bool:
+    return "animal" in sentencesentence_has_animal("Donald had a farm without animals") # True
+```
+
+* 枚举（最低 Python 版本为 3.4）
+
+```python
+from enum import Enum, 
+class autoclassMonster(Enum): 
+    ZOMBIE = auto() 
+    WARRIOR = auto() 
+    BEAR = auto()
+print(Monster.ZOMBIE) # Monster.ZOMBIE
+```
+
+* 原生 LRU 缓存（最低 Python 版本为 3.2）
+
+```python
+import time 
+from functools import lru_cache
+
+@lru_cache(maxsize=512)
+def fib(number: int) -> int:
+    if number == 0: 
+        return 0
+    if number == 1: 
+        return 1
+    return fib(number - 1) + fib(number - 2)
+start = time.time()
+fib(40)
+print(f'Duration: {time.time() - start}s')# Duration: 30.684099674224854s
+```
+
+* 扩展的可迭代对象解包（最低 Python 版本为 3.0）
+
+```python
+head, *body, tail = range(5)
+print(head, body, tail)# 0 [1, 2, 3] 4
+py, filename, *cmds = "python3.7 script.py -n 5 -l 15".split()
+print(py)
+print(filename)
+print(cmds)# python3.7
+# script.py# ['-n', '5', '-l', '15']
+first, _, third, *_ = range(10)
+print(first, third)# 0 2
+```
+
+* Data class 装饰器（最低 Python 版本为 3.7）
+
+```python
+from dataclasses import dataclass
+@dataclass
+class Armor: 
+    armor: float 
+    description: str 
+    level: int = 1
+    def power(self) -> float:
+        return self.armor * self.level
+armor = Armor(5.2, "Common armor.", 2)
+armor.power()# 10.4
+print(armor)# Armor(armor=5.2, description='Common armor.', level=2)
+```
+
+* 隐式命名空间包（最低 Python 版本为 3.3）
+
 ## Thanks
