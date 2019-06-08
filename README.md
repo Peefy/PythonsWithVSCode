@@ -34,6 +34,10 @@ or
 
 Then enjoy it.
 
+# Note
+
+[Chinese Version Note](https://github.com/Peefy/PythonsWithVSCode/blob/master/README_NOTE.md)
+
 # Tip
 
 If you like it or it may help.Thanks for **Fork** and *Star*!
