@@ -36,7 +36,7 @@ Then enjoy it.
 
 # Note
 
-[Chinese Version Note](https://github.com/Peefy/PythonsWithVSCode/blob/master/README_NOTE.md)
+[Chinese Version Note](https://github.com/Peefy/PythonsWithVSCode/blob/master/doc/README_NOTE.md)
 
 # Tip
 

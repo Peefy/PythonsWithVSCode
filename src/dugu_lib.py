@@ -14,7 +14,7 @@ list, set, and tuple.
 
 '''
 
-def print_func( par ):
+def print_func(par):
     print ("Hello : ", par)
     return
 
