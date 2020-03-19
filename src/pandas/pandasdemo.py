@@ -1,5 +1,4 @@
 
-import sys
 import math
 from copy import deepcopy
 
@@ -15,6 +14,7 @@ nowrootpath = './src/pandas/'
 inxlsname = nowrootpath + '1.xls'
 outxlsname = nowrootpath + '2020年1月 业务.xls'
 outsheetname = '2020年1月 业务'
+lastline0item = '合计'
 
 nameset = []
 nameset.append('')
@@ -24,14 +24,13 @@ nameprices = [0] * len(MATERIAL_KEYWORDS)
 
 namebuketsarr = []
 namepricesarr = []
-
 namebuketsarr.append(deepcopy(namebukets))
 namepricesarr.append(deepcopy(nameprices))
 
 if __name__ == "__main__":
     df = pd.read_excel(inxlsname)
     for data in df.ix[:].values:
-        if data[0] == '合计':
+        if data[0] == lastline0item:
             continue
         name = data[name_index]
         material = data[material_index]
@@ -74,7 +73,7 @@ if __name__ == "__main__":
             itemstr = [''] * len(HEADERS)
             itemstr[0] = nameset[n] + MATERIAL_KEYWORDS[k] + '合计'
             nameprice = namepricesarr[n]
-            itemstr[price_index] =  nameprice[k]
+            itemstr[price_index] = nameprice[k]
             df.loc[i] = itemstr
             i += 1
         itemstr = [''] * len(HEADERS)
