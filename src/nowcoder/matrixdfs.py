@@ -16,7 +16,7 @@ def _dfs(rows, columns, grid, i, j, isvisited):
 
 
 def isPath(rows, columns, grid):
-    isvisited = [[0] * rows for i in range(columns)]
+    isvisited = [[0] * columns for i in range(rows)]
     return _dfs(rows, columns, grid, 0, 0, isvisited)
     
 print(isPath(3, 3, [[1, 1, 1], [1, 9, 1], [0, 0, 0]]))

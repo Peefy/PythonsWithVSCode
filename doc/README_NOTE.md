@@ -728,4 +728,58 @@ print(armor)# Armor(armor=5.2, description='Common armor.', level=2)
 
 * 隐式命名空间包（最低 Python 版本为 3.3）
 
+## 32 Python3.8新特性
+
+* 赋值表达式
+顾名思义，就是在表达式中进行赋值。这个特性总体来说是一个语法糖，让代码看起来更简洁了一点点。比如，下面这段代码：
+```py
+n = len(a)
+if (n) > 10:
+    print(f"List is too long ({n} elements, expected <= 10)")
+```
+在Python 3.8中可以写为：
+```py
+if (n := len(a)) > 10:
+    print(f"List is too long ({n} elements, expected <= 10)")
+```
+
+* 限定位置参数
+这个特性允许你通过在函数参数列表中加一个"/"，来表示"/"之前的参数只能够当作位置参数使用。一个例子：
+```py
+def f(a, b, /, c, d, *, e, f):
+    print(a, b, c, d, e, f)
+```
+
+* 支持将编译字节码文件输出到其他位置
+  
+Python项目中一个常见的麻烦就是清理git代码库中的__pycache__文件，这些文件往往是你一不小心就添加进去了，清理起来却颇为麻烦。Python 3.8支持通过设置环境变量 PYTHONPYCACHEPREFIX ，让__pycache__生成到其他位置，而不跟.py文件混在一起。你在代码中可以通过 sys.pycache_prefix 查看生成的位置。
+
+* F字符串内的'='表达式
+* 
+在调试的时候，你是否经常会写这样的代码？
+```py
+>>> user = 'eric_idle'
+>>> member_since = date(1975, 7, 31)
+>>> f'user={user} member_since={member_since}'
+"user='eric_idle' member_since=datetime.date(1975, 7, 31)"
+```
+其中user={user}，member_since={member_since}就是典型的样板代码。在Python 3.8中，你可以简写为：
+```py
+>>> user = 'eric_idle'
+>>> member_since = date(1975, 7, 31)
+>>> f'{user=} {member_since=}'
+"user='eric_idle' member_since=datetime.date(1975, 7, 31)"
+```
+一个等号，f字符串就知道你需要在等号后面继续把等号前面变量的值显示出来。对于调试来说，这确实更加简洁了。
+
+* pickle协议5，独立处理内存中的数据缓存
+
+Python进程之间传输数据时，pickle是经常用到的。对于数据量大的情况，妥善管理并优化内存使用是非常重要的。Python3.8 中对pickle的数据传输做了优化，提高了性能和效率。
+
+其他改动
+
+* finally语句中可以有continue子句了，以前是不行的。
+* 函数调用时，f((keyword)=arg) 这种写法不再允许。
+* 新增模块importlib.metadata，用以读取第三方包的信息。
+
 ## Thanks
