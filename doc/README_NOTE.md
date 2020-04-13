@@ -169,14 +169,21 @@ print type(a),type(b),type(c) # <type 'list'> <type 'dict'> <type 'bool'>
 print isinstance(a,list)  # True
 ```
 
-
-
 ## 6 字典推导式
 
 可能你见过列表推导时,却没有见过字典推导式,在2.7中才加入的:
 
 ```python
 d = {key: value for (key, value) in iterable}
+```
+
+**合并两个字典**
+
+```python
+x = {'a' : 3, 'b' : 4}
+y = {'b' : 5, 'c' : 6}
+z = {**x, **y}
+print(z)
 ```
 
 ## 7 Python中单下划线和双下划线

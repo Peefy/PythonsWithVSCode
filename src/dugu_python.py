@@ -55,7 +55,7 @@ elif False:
 else:
     pass
 
-#续航符：\
+#续行符：\
 
 items = ['one', 'two', 'three', 'four']
 print('\n')
@@ -160,7 +160,10 @@ print (tinydict.keys())   # 输出所有键
 print (tinydict.values()) # 输出所有值
 
 print({x: x**2 for x in (2, 4, 6)})
-
+x = {'a' : 3, 'b' : 4}
+y = {'b' : 5, 'c' : 6}
+z = {**x, **y}  # 合并两个字典
+print(z)
 print(str(dict))
 # 注意下面只输出两个元素1代表索引1的元素，也就是第2个元素；
 # 3代表第三个元素
